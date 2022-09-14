@@ -158,7 +158,7 @@ if CFG.wandb:
         #from kaggle_secrets import UserSecretsClient
         #user_secrets = UserSecretsClient()
         #secret_value_0 = user_secrets.get_secret("wandb_api")
-        secret_value_0 = "4f982f3535f2bdb61299b1d12b056f9c550c6cd7"
+        secret_value_0 = "your key here"
         wandb.login(key=secret_value_0)
         anony = None
     except:
@@ -216,7 +216,7 @@ def get_logger(filename=logs_dir +'/train'):
 LOGGER = get_logger()
 
 
-def seed_everything(seed=42):
+def seed_everything(seed=1916):
     random.seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
@@ -224,7 +224,7 @@ def seed_everything(seed=42):
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     
-seed_everything(seed=42)
+seed_everything(seed=1916)
 
 """# Data Loading"""
 
@@ -259,7 +259,7 @@ if CFG.debug:
     display(train.groupby('fold').size())
 
 from huggingface_hub import notebook_login
-notebook_login() #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
+notebook_login()
 
 """# tokenizer"""
 
